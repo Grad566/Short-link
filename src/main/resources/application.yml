@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: shorter
+  liquibase:
+    change-log: classpath:db/migration/db.changelog-master.xml
+  datasource:
+    url: jdbc:postgresql://postgres:5432/links
+    username: admin
+    password: qwerty
+    driver-class-name: org.postgresql.Driver

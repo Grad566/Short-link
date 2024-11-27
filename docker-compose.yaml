@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17.0
+    restart: "no"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: links
+  shorter:
+    image: shorter:latest
+    build: .
+    restart: "no"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
